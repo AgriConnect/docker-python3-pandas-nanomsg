@@ -1,9 +1,9 @@
-FROM debian:stretch
+FROM debian:buster
 MAINTAINER Nguyễn Hồng Quân <ng.hong.quan@gmail.com>
 RUN apt-get update && \
 	DEBIAN_FRONTEND=noninteractive apt-get install -y \
 	python3-dev python3-pip cython3 \
-	liblapack-dev libatlas-dev gfortran \
+	liblapack-dev libatlas-base-dev gfortran \
 	libfreetype6-dev libpng-dev libjpeg-dev libpq-dev \
 	cmake wget git && \
 	apt-get clean && rm -rf /var/lib/apt/lists/*
